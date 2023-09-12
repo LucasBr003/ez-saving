@@ -29,3 +29,9 @@ The `Enable Debug Prints` option, when activated, instructs the plugin to send d
 
 ### Reset Save on Start
 The `Reset Save on Start` option, when activated, resets the player's saved file each time the game or project begins. This feature is particularly useful for debugging, as it ensures that the game isn't affected by the saved file, effectively restarting it upon launch when this option is enabled.
+
+# Custom Nodes
+The plugin introduces several new nodes, and we will now take a closer look at each of these nodes added by the plugin. This will help you understand how to effectively utilize these nodes to enhance your game's saving and loading capabilities.
+
+# Loading
+Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
