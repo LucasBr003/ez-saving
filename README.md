@@ -4,7 +4,17 @@ The Godot Plugin "EzSaving" official repository.
 # Description
 "EzSaving" is a versatile Godot engine plugin designed to streamline and simplify the management of save and load systems in your game. With its user-friendly features, it empowers developers to effortlessly implement multiple save files, allowing players to store and retrieve their progress independently. This plugin ensures a seamless and flexible approach to handling game saves, enhancing the overall player experience while providing the convenience of multiple save slots.
 
-**Disclaimer**: While EzSaving streamlines the process of loading and saving in a game, it may seem a bit complex at first for newcomers. We recommend taking some time to explore the documentation and examples to fully grasp its capabilities and make the most of this powerful tool. Once you're familiar with it, you'll find that EzSaving significantly simplifies the management of game data and enhances the player experience
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!IMPORTANT]
+> While EzSaving streamlines the process of loading and saving in a game, it may seem a bit complex at first for newcomers. We recommend taking some time to explore the documentation and examples to fully grasp its capabilities and make the most of this powerful tool. > Once you're familiar with it, you'll find that EzSaving significantly simplifies the management of game data and enhances the player experience
 
 # Getting Started: New Tab
 To get started with EzSaving, let's take a look at the tab it adds at the top of the engine, where you'll find the basic configuration settings for the plugin. This is your starting point for setting up and customizing the plugin to suit your game's saving and loading needs.
@@ -32,6 +42,28 @@ The `Reset Save on Start` option, when activated, resets the player's saved file
 
 # Custom Nodes
 The plugin introduces several new nodes, and we will now take a closer look at each of these nodes added by the plugin. This will help you understand how to effectively utilize these nodes to enhance your game's saving and loading capabilities.
+
+![CustomNodes](https://github.com/LucasBr003/ez-saving/assets/94023123/a60294d9-609a-4a4f-b2e2-4332ce499b55)
+
+## Save ![SaveCategoryIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/06922a97-77a0-4f08-a36b-3707c0951619)
+The `Save` node serves a purely organizational purpose and does not execute any specific actions within your game logic. Its primary function is to add a new category within the `Add Node` tab in the Godot scene editor, helping you keep your project neatly organized.
+
+## SaveDataHolder ![SaveResourceIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/ccb0ce3d-fba6-4514-84a5-789f4b057d1d)
+As a developer, you'll find the `SaveDataHolder` node to be an essential component in your game's loading process. This node serves as the bridge between your saved files and your game's logic, dictating how these files should be loaded and which data to incorporate into your game. Let's delve into its properties:
+
++ Save File Type: This property is instrumental in determining whether the `SaveDataHolder` node will load a global file or a normal file. Understanding the distinction between these file types is crucial:
+
+  - Global File Type: These files store data that remains consistent across all game saves. For example, global settings, configurations, or unlocked content. If you set `Save File Type` to `Global`, the node will load these universally applicable data points.
+
+  - Normal File Type: These files represent individual game saves, capturing the unique progress and choices made by players. When you select `Save File Type` as `Normal`, the node is configured to load data specific to a particular game save.
+
++ Data: The `Data` property serves as a container, holding game-related information in the form of a dictionary. This dictionary structure provides a flexible way to organize and manage your game's saved data. When a saved file is loaded, the node refers to this `Data` property to determine which variables and values should be populated. Here's how it works:
+
+  - Matching Data: If the saved file contains data that corresponds precisely to the keys and structure defined within the `Data` dictionary, those values will be loaded into your game as is.
+
+  - Missing Data: If the saved file lacks specific data or variables defined in `Data`, the `SaveDataHolder` node handles this situation gracefully. It uses the default values you've established within 'Data' to fill in the gaps. This ensures that your game continues to function even if some data is missing from a save file.
+
+Remember, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files. Together, these nodes enable you to seamlessly integrate saved data into your game.
 
 # Loading
 Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
