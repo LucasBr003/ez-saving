@@ -76,6 +76,9 @@ This node offers two editable properties in the inspector: `Load on Start` and `
 > [!WARNING]
 > It's crucial to adhere to the setup of child nodes within a `SaveLoader` node meticulously to ensure smooth and error-free operation. Any deviations from the prescribed configuration may lead to unexpected issues in the functionality of the node. Pay close attention to the specifications outlined in the node's documentation to ensure its seamless integration into your game.
 
+![SaveLoaderScene](https://github.com/LucasBr003/ez-saving/assets/94023123/b7aafa67-f312-475f-98ab-cd1cb7043db6)
+![SaveLoaderInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/802ccbda-206e-4311-ab10-613d9e497d04)
+
 ## SaveSignalListener ![SaveEventListener16](https://github.com/LucasBr003/ez-saving/assets/94023123/34028dbe-1ae4-4ef1-820a-f2113b11208f)
 The `SaveSignalListener` node possesses a unique capability—it can listen to signals emitted by its parent node, responding to these signals by performing specific actions related to saved files. Let's explore its key properties and functionality:
 
