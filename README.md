@@ -167,3 +167,8 @@ In our second method, we'll create a saved file loading system entirely through 
 > For those who prefer not to work with the Godot editor's built-in dictionary system for configuring the `DATA` property of SaveDataHolders, you can also configure this property using scripts. This provides an alternative method for setting up and customizing saved data within the SaveDataHolder nodes.
 
 With these steps, you can manually set up your saved file loading system within your scene, offering flexibility and control over the loading process, whether through the editor or script-based data configuration.
+
+![LoadingSceneStep4](https://github.com/LucasBr003/ez-saving/assets/94023123/8caa1b26-fd16-4367-ac7f-cfa80307ebe6)
+![LoadingSceneStep3](https://github.com/LucasBr003/ez-saving/assets/94023123/ef463383-34f3-4d3d-af47-7c09eb1d95f3)
+![LoadingSceneStep2](https://github.com/LucasBr003/ez-saving/assets/94023123/d4994c79-1f15-4e8b-b6a0-db0b8c803ee8)
+![LoadingSceneStep1](https://github.com/LucasBr003/ez-saving/assets/94023123/cfef1f73-0e0b-4622-9fe0-2caba1d7ac12)
