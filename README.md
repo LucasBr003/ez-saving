@@ -60,7 +60,8 @@ As a developer, you'll find the `SaveDataHolder` node to be an essential compone
 > As the name of this node says, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files.
 > Together, these nodes enable you to seamlessly integrate saved data into your game.
 
-## Save Loader
+## Save Loader ![SaveLoaderIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/577a9a93-caf5-434c-94e2-ae288684dc30)
+
 The `SaveLoader` node is responsible for the crucial task of loading saved files. However, it doesn't operate in isolation. It requires the presence of two `SaveDataHolder`s nodes as its children, with one configured as `Global` and the other as `Normal`. This configuration ensures the seamless integration of global and specific save data.
 
 This node offers two editable properties in the inspector: `Load on Start` and `Save Slot`.
