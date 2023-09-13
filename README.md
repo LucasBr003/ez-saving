@@ -76,7 +76,7 @@ This node offers two editable properties in the inspector: `Load on Start` and `
 > [!WARNING]
 > It's crucial to adhere to the setup of child nodes within a `SaveLoader` node meticulously to ensure smooth and error-free operation. Any deviations from the prescribed configuration may lead to unexpected issues in the functionality of the node. Pay close attention to the specifications outlined in the node's documentation to ensure its seamless integration into your game.
 
-## SaveSignalListener
+## SaveSignalListener ![SaveEventListener16](https://github.com/LucasBr003/ez-saving/assets/94023123/34028dbe-1ae4-4ef1-820a-f2113b11208f)
 The `SaveSignalListener` node possesses a unique capability—it can listen to signals emitted by its parent node, responding to these signals by performing specific actions related to saved files. Let's explore its key properties and functionality:
 
 + Signal Property: The `Signal` property plays a pivotal role in defining the behavior of the `SaveSignalListener`. You should populate this property with the name of a signal that the parent node can emit. When the parent node emits a signal matching the name specified in the `Signal` property, the `SaveSignalListener` will initiate an action associated with saved files based on the `Action` property.
@@ -84,7 +84,7 @@ The `SaveSignalListener` node possesses a unique capability—it can listen to s
 + Action Property: The `Action` property determines the specific action the `SaveSignalListener` should execute when the designated signal is emitted. Depending on the value assigned to this property, the node can trigger actions such as saving or loading game data. This dynamic behavior allows for versatile interactions within your game.
 
 > [!IMPORTANT] 
-> It's important to note that if you configure the 'SaveSignalListener' to load a saved file, you must specify a `SaveLoader` node from the scene in the `Save Loader` property. Additionally, you have the flexibility to override the `Save Slot` property of the selected `SaveLoader` node by using the `Save Slot Override` property of the `SaveSignalListener`. This level of control enables you to fine-tune the loading process as needed for your game.
+> It's important to note that if you configure the `SaveSignalListener` to load a saved file, you must specify a `SaveLoader` node from the scene in the `Save Loader` property. Additionally, you have the flexibility to override the `Save Slot` property of the selected `SaveLoader` node by using the `Save Slot Override` property of the `SaveSignalListener`. This level of control enables you to fine-tune the loading process as needed for your game.
 
 > [!NOTE]
 > Here are some scenarios where `SaveSignalListener` can be effectively employed:
