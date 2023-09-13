@@ -86,8 +86,7 @@ The `SaveSignalListener` node possesses a unique capability—it can listen to s
 > [!IMPORTANT] 
 > It's important to note that if you configure the `SaveSignalListener` to load a saved file, you must specify a `SaveLoader` node from the scene in the `Save Loader` property. Additionally, you have the flexibility to override the `Save Slot` property of the selected `SaveLoader` node by using the `Save Slot Override` property of the `SaveSignalListener`. This level of control enables you to fine-tune the loading process as needed for your game.
 
-> [!NOTE]
-> Here are some scenarios where `SaveSignalListener` can be effectively employed:
+Here are some scenarios where `SaveSignalListener` can be effectively employed:
 
 + Checkpoint Systems: You can use `SaveSignalListener` to create checkpoint systems where specific events, like when an `Area2D` or a `CharacterBody` enters another `Area2D`, you can set an `Area2D` to be the `SaveSignalListener`'s parent and use the signal `area_entered` or `body_entered`, for example.
 
