@@ -53,10 +53,24 @@ As a developer, you'll find the `SaveDataHolder` node to be an essential compone
   - Matching Data: If the saved file contains data that corresponds precisely to the keys and structure defined within the `Data` dictionary, those values will be loaded into your game as is.
 
   - Missing Data: If the saved file lacks specific data or variables defined in `Data`, the `SaveDataHolder` node handles this situation gracefully. It uses the default values you've established within 'Data' to fill in the gaps. This ensures that your game continues to function even if some data is missing from a save file.
+ 
+![SaveDataHolderInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/6ad2181b-cdfb-4560-8619-e1b5ece882fb)
 
 > [!NOTE]
-> Remember, as the name of this node says, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files.
+> As the name of this node says, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files.
 > Together, these nodes enable you to seamlessly integrate saved data into your game.
+
+## Save Loader
+The `SaveLoader` node is responsible for the crucial task of loading saved files. However, it doesn't operate in isolation. It requires the presence of two `SaveDataHolder`s nodes as its children, with one configured as `Global` and the other as `Normal`. This configuration ensures the seamless integration of global and specific save data.
+
+This node offers two editable properties in the inspector: `Load on Start` and `Save Slot`.
+
++ Load on Start: When enabled, this option automates the loading of saved files using the two `SaveDataHolder` nodes as its children. However, it's essential to understand that this convenience may limit the full potential of the `SaveLoader`. It results in the automatic loading of the game, potentially restricting opportunities for more dynamic and engaging game-loading experiences that we'll explore later.
+
++ Save Slot: The `Save Slot` property functions similarly to the equivalent setting in the plugin's basic configuration. If the property here conflicts with the configuration in the plugin, the `SaveLoader` node will temporarily override the plugin's settings. This dynamic adjustment allows for flexibility during gameplay but doesn't permanently alter the plugin's setup. It's important to note that these changes revert to the original plugin configuration when the game window is closed.
+
+> [!IMPORTANT]
+> The `SaveLoader` node's true power emerges when paired with another node we will introduce shortly. Together, they unlock more robust and customizable loading capabilities, enabling you to create diverse and engaging gameplay experiences for your players.
 
 # Loading
 Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
