@@ -93,9 +93,7 @@ Here are some scenarios where `SaveSignalListener` can be effectively employed:
 
 + Checkpoint Systems: You can use `SaveSignalListener` to create checkpoint systems where specific events, like when an `Area2D` or a `CharacterBody` enters another `Area2D`, you can set an `Area2D` to be the `SaveSignalListener`'s parent and use the signal `area_entered` or `body_entered`, for example.
 
-+ Quest Completion: Implement `SaveSignalListener` to manage the saving and loading of quest progress. For instance, when a quest is completed, emit a signal that prompts the `SaveSignalListener` to save the updated quest data.
-
-+ Inventory Management: Use this node to handle inventory updates. Emit a signal when an item is added or removed from the player's inventory, and let the `SaveSignalListener` manage the corresponding save operations.
++ Saving & Loading buttons: You can use `SaveSignalListener` to create buttons that automatically save or load the game, by adding a `Button` and a `SaveSignalListener` as a child node of the button to a scene, and making the `SaveSignalListener` listen to the `pressed` signal of the button.
 
 By harnessing the power of `SaveSignalListener`, you can add dynamic and responsive saving and loading functionality to your game, enhancing the player experience while maintaining granular control over data management.
 
