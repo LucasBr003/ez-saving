@@ -60,7 +60,7 @@ As a developer, you'll find the `SaveDataHolder` node to be an essential compone
 > As the name of this node says, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files.
 > Together, these nodes enable you to seamlessly integrate saved data into your game.
 
-## Save Loader ![SaveLoaderIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/577a9a93-caf5-434c-94e2-ae288684dc30)
+## SaveLoader ![SaveLoaderIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/577a9a93-caf5-434c-94e2-ae288684dc30)
 
 The `SaveLoader` node is responsible for the crucial task of loading saved files. However, it doesn't operate in isolation. It requires the presence of two `SaveDataHolder`s nodes as its children, with one configured as `Global` and the other as `Normal`. This configuration ensures the seamless integration of global and specific save data.
 
@@ -75,6 +75,27 @@ This node offers two editable properties in the inspector: `Load on Start` and `
 
 > [!WARNING]
 > It's crucial to adhere to the setup of child nodes within a `SaveLoader` node meticulously to ensure smooth and error-free operation. Any deviations from the prescribed configuration may lead to unexpected issues in the functionality of the node. Pay close attention to the specifications outlined in the node's documentation to ensure its seamless integration into your game.
+
+## SaveSignalListener
+The `SaveSignalListener` node possesses a unique capability—it can listen to signals emitted by its parent node, responding to these signals by performing specific actions related to saved files. Let's explore its key properties and functionality:
+
++ Signal Property: The `Signal` property plays a pivotal role in defining the behavior of the `SaveSignalListener`. You should populate this property with the name of a signal that the parent node can emit. When the parent node emits a signal matching the name specified in the `Signal` property, the `SaveSignalListener` will initiate an action associated with saved files based on the `Action` property.
+
++ Action Property: The `Action` property determines the specific action the `SaveSignalListener` should execute when the designated signal is emitted. Depending on the value assigned to this property, the node can trigger actions such as saving or loading game data. This dynamic behavior allows for versatile interactions within your game.
+
+> [!IMPORTANT] 
+> It's important to note that if you configure the 'SaveSignalListener' to load a saved file, you must specify a `SaveLoader` node from the scene in the `Save Loader` property. Additionally, you have the flexibility to override the `Save Slot` property of the selected `SaveLoader` node by using the `Save Slot Override` property of the `SaveSignalListener`. This level of control enables you to fine-tune the loading process as needed for your game.
+
+> [!NOTE]
+> Here are some scenarios where `SaveSignalListener` can be effectively employed:
+
++ Checkpoint Systems: You can use `SaveSignalListener` to create checkpoint systems where specific events, like when an `Area2D` or a `CharacterBody` enters another `Area2D`, you can set an `Area2D` to be the `SaveSignalListener`'s parent and use the signal `area_entered` or `body_entered`, for example.
+
++ Quest Completion: Implement `SaveSignalListener` to manage the saving and loading of quest progress. For instance, when a quest is completed, emit a signal that prompts the `SaveSignalListener` to save the updated quest data.
+
++ Inventory Management: Use this node to handle inventory updates. Emit a signal when an item is added or removed from the player's inventory, and let the `SaveSignalListener` manage the corresponding save operations.
+
+By harnessing the power of `SaveSignalListener`, you can add dynamic and responsive saving and loading functionality to your game, enhancing the player experience while maintaining granular control over data management.
 
 # Loading
 Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
