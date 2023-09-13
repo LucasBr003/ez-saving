@@ -105,11 +105,15 @@ Now that we've explored the key plugin settings, let's dive into using it, start
 
 ## Method 1: Code
 ```
-var loader: SaveLoader = SaveLoader.new()
-add_child(loader)
+# Creating a new SaveLoader instance and adding it to the scene.
+var loader: SaveLoader = SaveLoader.new() # Creating a new SaveLoader instance.
+add_child(loader) # Adding the new SaveLoader to the scene.
 	
-var normal_holder: SaveDataHolder = SaveDataHolder.new()
-normal_holder.SAVE_FILE_TYPE = "Normal"
+# Creating 2 new SaveDataHolders to work with the SaveLoader.
+var normal_holder: SaveDataHolder = SaveDataHolder.new() # Creating a new SaveDataHolder instance.
+normal_holder.SAVE_FILE_TYPE = "Normal" # Updating its Save File Type to normal.
+	
+# Adding some data to it.
 normal_holder.DATA = {
 	"ExampleInt": 10,
 	"ExampleFloat": 37.5,
@@ -117,16 +121,24 @@ normal_holder.DATA = {
 	"ExampleVector": Vector2.ZERO
 }
 	
-var global_loader: SaveDataHolder = SaveDataHolder.new()
-global_loader.SAVE_FILE_TYPE = "Global"
-global_loader.DATA = {
+var global_holder: SaveDataHolder = SaveDataHolder.new() # Creating a new SaveDataHolder instance.
+global_holder.SAVE_FILE_TYPE = "Global" # Updating its Save File Type to global.
+	
+# Adding some data to it.
+global_holder.DATA = {
 	"BooleanPlayerSetting": true,
 	"FloatPlayerSetting": 37.5,
 	"StringPlayerSetting": "Hellow world!",
 	"VectorPlayerSetting": Vector2.ZERO
 }
 	
-loader.add_child(global_loader)
-loader.add_child(normal_holder)
+# Adding the required children to the SaveLoader work properly.
+loader.add_child(global_holder) # Adding the global SaveDataHolder as a child of the SaveLoader.
+loader.add_child(normal_holder) # Adding the normal SaveDataHolder as a child of the SaveLoader.
+	
+# Loading the save files.
 loader.load_save()
+	
+# Removing all the nodes created by this script, since they are not necessary anymore.
+loader.queue_free() # Removing the SaveLoader, consequently removing all its children.
 ```
