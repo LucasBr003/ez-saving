@@ -106,27 +106,27 @@ Now that we've explored the key plugin settings, let's dive into using it, start
 ## Method 1: Code
 ```
 var loader: SaveLoader = SaveLoader.new()
-	add_child(loader)
+add_child(loader)
 	
-	var normal_holder: SaveDataHolder = SaveDataHolder.new()
-	normal_holder.SAVE_FILE_TYPE = "Normal"
-	normal_holder.DATA = {
-		"ExampleInt": 10,
-		"ExampleFloat": 37.5,
-		"ExampleString": "Hellow world!",
-		"ExampleVector": Vector2.ZERO
-	}
+var normal_holder: SaveDataHolder = SaveDataHolder.new()
+normal_holder.SAVE_FILE_TYPE = "Normal"
+normal_holder.DATA = {
+	"ExampleInt": 10,
+	"ExampleFloat": 37.5,
+	"ExampleString": "Hellow world!",
+	"ExampleVector": Vector2.ZERO
+}
 	
-	var global_loader: SaveDataHolder = SaveDataHolder.new()
-	global_loader.SAVE_FILE_TYPE = "Global"
-	global_loader.DATA = {
-		"BooleanPlayerSetting": true,
-		"FloatPlayerSetting": 37.5,
-		"StringPlayerSetting": "Hellow world!",
-		"VectorPlayerSetting": Vector2.ZERO
-	}
+var global_loader: SaveDataHolder = SaveDataHolder.new()
+global_loader.SAVE_FILE_TYPE = "Global"
+global_loader.DATA = {
+	"BooleanPlayerSetting": true,
+	"FloatPlayerSetting": 37.5,
+	"StringPlayerSetting": "Hellow world!",
+	"VectorPlayerSetting": Vector2.ZERO
+}
 	
-	loader.add_child(global_loader)
-	loader.add_child(normal_holder)
-	loader.load_save()
+loader.add_child(global_loader)
+loader.add_child(normal_holder)
+loader.load_save()
 ```
