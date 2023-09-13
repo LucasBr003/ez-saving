@@ -101,9 +101,11 @@ By harnessing the power of `SaveSignalListener`, you can add dynamic and respons
 ![SaveSignalListenerScene](https://github.com/LucasBr003/ez-saving/assets/94023123/2d469ffb-1f59-4f1e-82f5-9996d9d46014)
 
 # Loading
-Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
+Now that we've explored the custom nodes and basic plugin settings, it's time to delve into various approaches for creating a saved file loading system for your game or project. We'll leverage what we've learned and demonstrate different methods to implement a robust saved file loading system, allowing you to choose the approach that best suits your game's requirements.
 
 ## Method 1: Code
+The first method we'll explore involves creating a saved file loading system entirely through code. In this approach, your code dynamically generates three new nodes and adds them to the scene in real-time: a `SaveLoader` node and two `SaveDataHolder` nodes. These nodes are then meticulously configured to enable seamless loading of your game or project. Once the operation is successfully completed, the code removes these three nodes from the scene, as they are no longer required.
+
 ```
 # Creating a new SaveLoader instance and adding it to the scene.
 var loader: SaveLoader = SaveLoader.new() # Creating a new SaveLoader instance.
@@ -142,3 +144,6 @@ loader.load_save()
 # Removing all the nodes created by this script, since they are not necessary anymore.
 loader.queue_free() # Removing the SaveLoader, consequently removing all its children.
 ```
+
+> [!IMPORTANT]
+> It's crucial to configure the 'DATA' property of both SaveDataHolders accurately, as this data structure varies from game to game. Tailor the 'DATA' property to suit your specific game's saved data requirements, ensuring that it accurately reflects the information you need to save and load for your game or project.
