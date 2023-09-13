@@ -56,7 +56,7 @@ As a developer, you'll find the `SaveDataHolder` node to be an essential compone
  
 ![SaveDataHolderInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/6ad2181b-cdfb-4560-8619-e1b5ece882fb)
 
-> [!NOTE]
+> [!IMPORTANT]
 > As the name of this node says, the `SaveDataHolder` node is a critical component in the loading process, but it requires the collaboration of another node, which we will explain in more detail later, to actually facilitate the loading of saved files.
 > Together, these nodes enable you to seamlessly integrate saved data into your game.
 
@@ -71,6 +71,9 @@ This node offers two editable properties in the inspector: `Load on Start` and `
 
 > [!IMPORTANT]
 > The `SaveLoader` node's true power emerges when paired with another node we will introduce shortly. Together, they unlock more robust and customizable loading capabilities, enabling you to create diverse and engaging gameplay experiences for your players.
+
+> [!WARNING]
+> It's crucial to adhere to the setup of child nodes within a `SaveLoader` node meticulously to ensure smooth and error-free operation. Any deviations from the prescribed configuration may lead to unexpected issues in the functionality of the node. Pay close attention to the specifications outlined in the node's documentation to ensure its seamless integration into your game.
 
 # Loading
 Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
