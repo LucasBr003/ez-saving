@@ -97,5 +97,7 @@ Here are some scenarios where `SaveSignalListener` can be effectively employed:
 
 By harnessing the power of `SaveSignalListener`, you can add dynamic and responsive saving and loading functionality to your game, enhancing the player experience while maintaining granular control over data management.
 
+![SaveSignalListenerInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/99c2f95d-022f-4f62-be12-dd17ac1922c3)
+
 # Loading
 Now that we've explored the key plugin settings, let's dive into using it, starting with a simple system for loading saved files. This will serve as a fundamental step in implementing saving and loading functionality into your game. Don't worry, we'll be covering Saving Systems later on.
