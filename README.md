@@ -156,12 +156,12 @@ In our second method, we'll create a saved file loading system entirely through 
 2. Adding Nodes: In the selected scene, you'll need to add three nodes to set up your saved file loading system:
 
 + SaveLoader: This node serves as the core of your loading system. Add it to the scene and configure it according to the specifications discussed earlier, ensuring it's set up to manage the loading process efficiently.
-+ SaveDataHolder (Global): Add the first `SaveDataHolder` node, setting its 'Save File Type' property to `Global`. Configure the `Data` property to reflect the global data you want to load when necessary.
-+ SaveDataHolder (Normal): Add the second `SaveDataHolder` node, this time setting its 'Save File Type' property to `Normal`. Customize the `Data` property to match the specific data points associated with individual game saves.
++ SaveDataHolder (Global): Add the first `SaveDataHolder` node, setting its`Save File Type` property to `Global`. Configure the `Data` property to reflect the global data you want to load when necessary.
++ SaveDataHolder (Normal): Add the second `SaveDataHolder` node, this time setting its `Save File Type` property to `Normal`. Customize the `Data` property to match the specific data points associated with individual game saves.
 
-3. Adding SaveSignalListener (Optional): At this point, you can optionally include a `SaveSignalListener` node as a child of an existing node within the scene. Configure it to respond to desired signals, such as signals related to game progress or events that prompt loading. Refer to earlier explanations for configuring the 'Signal' and 'Action' properties for this node.
+3. Adding SaveSignalListener (Optional): At this point, you can optionally include a `SaveSignalListener` node as a child of an existing node within the scene. Configure it to respond to desired signals, such as signals related to game progress or events that prompt loading. Refer to earlier explanations for configuring the `Signal` and `Action` properties for this node.
 
-+ Alternative Approach (Script): Alternatively, if you prefer handling loading operations through script, you can reference the 'SaveLoader' node in your script. When you want to initiate the game loading process, call the `load()` function on the `SaveLoader` node. This method offers programmatic control over loading, allowing you to trigger it at specific points in your game.
++ Alternative Approach (Script): Alternatively, if you prefer handling loading operations through script, you can reference the `SaveLoader` node in your script. When you want to initiate the game loading process, call the `load_save()` function on the `SaveLoader` node. This method offers programmatic control over loading, allowing you to trigger it at specific points in your game.
 
 > [!NOTE]
 > For those who prefer not to work with the Godot editor's built-in dictionary system for configuring the `DATA` property of SaveDataHolders, you can also configure this property using scripts. This provides an alternative method for setting up and customizing saved data within the SaveDataHolder nodes.
