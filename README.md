@@ -163,10 +163,13 @@ In our second method, we'll create a saved file loading system entirely through 
 
 + Alternative Approach (Script): Alternatively, if you prefer handling loading operations through script, you can reference the `SaveLoader` node in your script. When you want to initiate the game loading process, call the `load_save()` function on the `SaveLoader` node. This method offers programmatic control over loading, allowing you to trigger it at specific points in your game.
 
+With these steps, you can manually set up your saved file loading system within your scene, offering flexibility and control over the loading process, whether through the editor or script-based data configuration.
+
 > [!NOTE]
 > For those who prefer not to work with the Godot editor's built-in dictionary system for configuring the `DATA` property of SaveDataHolders, you can also configure this property using scripts. This provides an alternative method for setting up and customizing saved data within the SaveDataHolder nodes.
 
-With these steps, you can manually set up your saved file loading system within your scene, offering flexibility and control over the loading process, whether through the editor or script-based data configuration.
+> [!WARNING] 
+> Pay close attention to node configuration to avoid unexpected behaviors. Accurate setup of each node, including their properties and connections, is crucial for the smooth operation of your saved file loading system. Take the time to ensure that all settings align with your game's requirements to prevent any unforeseen issues during gameplay.
 
 ![LoadingSceneStep1](https://github.com/LucasBr003/ez-saving/assets/94023123/cfef1f73-0e0b-4622-9fe0-2caba1d7ac12)
 ![LoadingSceneStep2](https://github.com/LucasBr003/ez-saving/assets/94023123/d4994c79-1f15-4e8b-b6a0-db0b8c803ee8)
