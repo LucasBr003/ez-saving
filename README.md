@@ -100,6 +100,24 @@ By harnessing the power of `SaveSignalListener`, you can add dynamic and respons
 ![SaveSignalListenerInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/99c2f95d-022f-4f62-be12-dd17ac1922c3)
 ![SaveSignalListenerScene](https://github.com/LucasBr003/ez-saving/assets/94023123/2d469ffb-1f59-4f1e-82f5-9996d9d46014)
 
+## SaveValueLink ![SaveValueLinkIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/6a91db54-aa00-4196-b024-a249c9931206)
+The `SaveValueLink` node is a versatile tool that facilitates the synchronization of a property between the parent node and saved data, or vice versa, depending on the chosen `Mode` property. This synchronization process can be instrumental in maintaining consistency between game state variables and saved data. To effectively utilize the `SaveValueLink` node, it's essential to configure the following properties:
+
+`Mode`: This property determines the direction of synchronization. You can set it to one of two modes:
+
++ Save Value = Property: In this mode, the node synchronizes the parent node's property with the corresponding value in the saved data. Changes made to the parent property are reflected in the saved data.
++ Property = Save Value: In this mode, the node synchronizes the saved data value with the parent node's property. Changes made to the saved data will update the parent property.
+
+`Parent Property`: This property specifies which property of the parent node will be synchronized with saved data or will be modified by saved data.
+
+`Save Value`: Similar to the `Parent Property`, this property designates which value from the saved data will be used to modify the `Parent Property` or will be modified by it, depending on the selected synchronization mode.
+
+`Sync Interval`: This property defines the time interval between synchronization attempts. The "SaveValueLink" node will periodically check for changes and synchronize accordingly based on this interval.
+
+With these properties properly configured, the `SaveValueLink` node becomes a valuable asset for maintaining data integrity and ensuring that your game operates smoothly in conjunction with saved files.
+
+![SaveValueLinkInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/98f86772-1584-4a2e-b35b-605a8a7f51c2)
+
 # Loading
 Now that we've explored the custom nodes and basic plugin settings, it's time to delve into various approaches for creating a saved file loading system for your game or project. We'll leverage what we've learned and demonstrate different methods to implement a robust saved file loading system, allowing you to choose the approach that best suits your game's requirements.
 
