@@ -103,16 +103,15 @@ By harnessing the power of `SaveSignalListener`, you can add dynamic and respons
 ## SaveValueLink ![SaveValueLinkIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/6a91db54-aa00-4196-b024-a249c9931206)
 The `SaveValueLink` node is a versatile tool that facilitates the synchronization of a property between the parent node and saved data, or vice versa, depending on the chosen `Mode` property. This synchronization process can be instrumental in maintaining consistency between game state variables and saved data. To effectively utilize the `SaveValueLink` node, it's essential to configure the following properties:
 
-`Mode`: This property determines the direction of synchronization. You can set it to one of two modes:
++ Mode: This property determines the direction of synchronization. You can set it to one of two modes:
+  - Save Value = Property: In this mode, the node synchronizes the parent node's property with the corresponding value in the saved data. Changes made to the parent property are reflected in the saved data.
+  - Property = Save Value: In this mode, the node synchronizes the saved data value with the parent node's property. Changes made to the saved data will update the parent property.
 
-+ Save Value = Property: In this mode, the node synchronizes the parent node's property with the corresponding value in the saved data. Changes made to the parent property are reflected in the saved data.
-+ Property = Save Value: In this mode, the node synchronizes the saved data value with the parent node's property. Changes made to the saved data will update the parent property.
++ Parent Property: This property specifies which property of the parent node will be synchronized with saved data or will be modified by saved data.
 
-`Parent Property`: This property specifies which property of the parent node will be synchronized with saved data or will be modified by saved data.
++ Save Value: Similar to the `Parent Property`, this property designates which value from the saved data will be used to modify the `Parent Property` or will be modified by it, depending on the selected synchronization mode.
 
-`Save Value`: Similar to the `Parent Property`, this property designates which value from the saved data will be used to modify the `Parent Property` or will be modified by it, depending on the selected synchronization mode.
-
-`Sync Interval`: This property defines the time interval between synchronization attempts. The "SaveValueLink" node will periodically check for changes and synchronize accordingly based on this interval.
++ Sync Interval: This property defines the time interval between synchronization attempts. The "SaveValueLink" node will periodically check for changes and synchronize accordingly based on this interval.
 
 With these properties properly configured, the `SaveValueLink` node becomes a valuable asset for maintaining data integrity and ensuring that your game operates smoothly in conjunction with saved files.
 
