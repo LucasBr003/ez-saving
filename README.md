@@ -111,7 +111,9 @@ The `SaveValueLink` node is a versatile tool that facilitates the synchronizatio
 
 + Save Value: Similar to the `Parent Property`, this property designates which value from the saved data will be used to modify the `Parent Property` or will be modified by it, depending on the selected synchronization mode.
 
-+ Sync Interval: This property defines the time interval between synchronization attempts. The "SaveValueLink" node will periodically check for changes and synchronize accordingly based on this interval.
++ Always Sync: This property determines if the `SaveValueLink` should sync the properties and values every frame.
+
++ Sync Interval: This property defines the time interval between synchronization attempts. The "SaveValueLink" node will periodically check for changes and synchronize accordingly based on this interval. This property only works when `Always Sync` is enabled.
 
 With these properties properly configured, the `SaveValueLink` node becomes a valuable asset for maintaining data integrity and ensuring that your game operates smoothly in conjunction with saved files.
 
