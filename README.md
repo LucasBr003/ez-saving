@@ -119,6 +119,22 @@ With these properties properly configured, the `SaveValueLink` node becomes a va
 
 ![SaveValueLinkInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/98f86772-1584-4a2e-b35b-605a8a7f51c2)
 
+## SaveStringReplace
+The `SaveStringReplace` node is a versatile tool designed to replace specific words or expressions within the text of its parent node with values retrieved from saved data. To harness its functionality effectively, several properties that can be edited in the Godot inspector must be configured:
+
++ From: This property specifies the word or expression to be replaced within the text.
+
++ To: This property determines what will replace the word or expression specified in the `From` property. To function correctly, the `To` property should correspond to a key within the saved data dictionary.
+
++ Always Replace: This property controls whether the `SaveStringReplace` node continuously updates the text of its parent node throughout the game's execution. When activated, it enables automatic text replacement in every frame.
+
+Replace Interval: This property comes into play when `Always Replace` is enabled. It defines the time interval between consecutive replacements. If this property remains deactivated, developers can manually trigger text replacement by calling the `replace()` function within the `SaveStringReplace` node.
+
+> [!IMPORTANT] 
+> Properly configuring the "From" and "To" properties is crucial to ensure that the correct words or expressions are replaced in the text. Additionally, consider the performance impact of enabling "Always Replace" and adjusting the `Replace Interval` as needed to achieve the desired level of text updating.
+
+With these properties set up according to your requirements, the "SaveStringReplace" node becomes a valuable asset for dynamically modifying text content based on saved data, enhancing the player's experience and providing personalized in-game narratives.
+
 # Loading
 Now that we've explored the custom nodes and basic plugin settings, it's time to delve into various approaches for creating a saved file loading system for your game or project. We'll leverage what we've learned and demonstrate different methods to implement a robust saved file loading system, allowing you to choose the approach that best suits your game's requirements.
 
