@@ -119,7 +119,7 @@ With these properties properly configured, the `SaveValueLink` node becomes a va
 
 ![SaveValueLinkInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/98f86772-1584-4a2e-b35b-605a8a7f51c2)
 
-## SaveStringReplace
+## SaveStringReplace ![SaveReplacerIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/a83fe99a-413c-4e2b-bbd4-a1485617e2a3)
 The `SaveStringReplace` node is a versatile tool designed to replace specific words or expressions within the text of its parent node with values retrieved from saved data. To harness its functionality effectively, several properties that can be edited in the Godot inspector must be configured:
 
 + From: This property specifies the word or expression to be replaced within the text.
@@ -129,6 +129,9 @@ The `SaveStringReplace` node is a versatile tool designed to replace specific wo
 + Always Replace: This property controls whether the `SaveStringReplace` node continuously updates the text of its parent node throughout the game's execution. When activated, it enables automatic text replacement in every frame.
 
 Replace Interval: This property comes into play when `Always Replace` is enabled. It defines the time interval between consecutive replacements. If this property remains deactivated, developers can manually trigger text replacement by calling the `replace()` function within the `SaveStringReplace` node.
+
+![SaveReplacerScene](https://github.com/LucasBr003/ez-saving/assets/94023123/d6f02b7c-8284-4b1b-b71e-112896dceace)
+![SaveReplacerInspector](https://github.com/LucasBr003/ez-saving/assets/94023123/b0c563eb-4be7-4ad9-a729-cecb94dd629d)
 
 > [!IMPORTANT] 
 > Properly configuring the "From" and "To" properties is crucial to ensure that the correct words or expressions are replaced in the text. Additionally, consider the performance impact of enabling "Always Replace" and adjusting the `Replace Interval` as needed to achieve the desired level of text updating.
