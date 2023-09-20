@@ -14,5 +14,38 @@ The "EzSaving" plugin for Godot is your streamlined solution for managing game s
   
 Elevate your game development experience with "EzSaving" and simplify the complex task of managing saved game data. Start enhancing your players' experiences today!
 
-# Documentation
-Visit the [EzSaving Wiki](https://github.com/LucasBr003/ez-saving/wiki) on Github to access all the valuable information you need to streamline your game save and load systems.
+# Configuring the "EzSaving" Plugin
+
+Once the plugin is correctly installed, you should see a new tab labeled "EzSaving" next to the "AssetLib" tab. Click on it to access the plugin's interface, where you'll find several basic configuration options:
+
+1. ***Save File Path***:
++ This setting determines where the save files will be stored. By default, the files are saved in `user://save`. 
+
+> [!NOTE]
+> There is no file extension provided here because the plugin automatically handles it.
+
+> [!IMPORTANT]
+> Be aware that the `user://` prefix is used instead of `res://`. Using `res://` would save files within the game's assets, which is not what we want. We want the files to be saved on the player's computer.
+
+> [!WARNING]
+> Ensure that the directory where the files will be saved already exists. If you configure the files to be saved in a folder that doesn't exist, the plugin won't automatically create the folder, so be careful to prevent errors.
+
+2. ***Selected Save Slot***:
++ This setting determines which file will be used to save the game, allowing players to save at various points in a game or project and return to any of them without affecting other saves. There is no limit to the number of save slots available.
+
+3. ***Enable Automatic Saving***:
++ When this option is enabled, the plugin will automatically save the game or project at regular intervals.
+
+4. ***Automatically Save Every ... minutes***:
++ This setting is only relevant when `Enable Automatic Saving` is active. It defines the time interval between automatic saves.
+
+5. ***Enable Debug Prints***:
++ If this option is enabled, the plugin will output debug messages in the Godot editor's output console.
+
+6. ***Encrypt Save***:
++ When this option is enabled, the save files will be encrypted with a special password (unknown to the user, to you and to me) to prevent manual tampering by players. If you want to know the password, use `print(OS.get_unique_id)`.
+
+> [!NOTE]
+> It's highly recommended to disable this option during game or project development to facilitate easier manipulation of game progress. However, it should be enabled when releasing the game to prevent unwanted player interference.
+
+By configuring these options in the "EzSaving" plugin interface, you can set up your save and load systems according to your project's needs.
