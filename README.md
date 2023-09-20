@@ -46,6 +46,9 @@ That's it! You've successfully installed the "EzSaving" plugin for Godot, and yo
 
 Once the plugin is correctly installed, you should see a new tab labeled "EzSaving" next to the "AssetLib" tab. Click on it to access the plugin's interface, where you'll find several basic configuration options:
 
+![Configuration1](https://github.com/LucasBr003/ez-saving/assets/94023123/293da957-7741-48ae-81f2-4e0dccfe856c)
+![Configuration2](https://github.com/LucasBr003/ez-saving/assets/94023123/d1aa61e9-2886-4f9b-acdc-aae0d9a500ad)
+
 1. ***Save File Path***:
 + This setting determines where the save files will be stored. By default, the files are saved in `user://save`. 
 
