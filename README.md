@@ -80,3 +80,24 @@ Once the plugin is correctly installed, you should see a new tab labeled "EzSavi
 > It's highly recommended to disable this option during game or project development to facilitate easier manipulation of game progress. However, it should be enabled when releasing the game to prevent unwanted player interference.
 
 By configuring these options in the "EzSaving" plugin interface, you can set up your save and load systems according to your project's needs.
+
+# Defining Saved Information
+
+To define the information that is going to be saved in your game or project, follow these steps:
+
+1. Locate the `FileSystem` tab in Godot, in the lower-left corner of the editor.
+2. In the search bar within the `FileSystem` tab, type "res://addons/ez_saving/objects/plugin_singleton/plugin_singleton_script.gd" and press Enter.
+3. If everything is correct, a script file should be selected automatically. Open the script.
+4. At the top of the script, in the first few lines, you'll find a variable named "DATA" of type "Dictionary." There is a comment line above it indicating that this variable should be modified according to your game or project's needs. It should look like this:
+```
+# The save file data. 
+# Customize it here :) 
+# Don't touch anything else >:(
+var DATA: Dictionary = {
+	
+}
+```
+> [!WARNING]
+> You should only modify the "DATA" dictionary within this script. Avoid making changes to other parts of the script, as incorrect alterations can interfere with the plugin's functionality.
+
+By editing the "DATA" dictionary in this script, you can define and customize the information you want to save and load for your game or project.
