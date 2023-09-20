@@ -14,6 +14,34 @@ The "EzSaving" plugin for Godot is your streamlined solution for managing game s
   
 Elevate your game development experience with "EzSaving" and simplify the complex task of managing saved game data. Start enhancing your players' experiences today!
 
+# How to Install the "EzSaving" Plugin from the Godot Asset Library.
+
+Installing the "EzSaving" plugin for Godot is a straightforward process using the Godot Asset Library. Follow these simple steps to get started:
+
+1. **Open Your Godot Project**:
++ Launch the Godot Engine and open the project where you want to install the "EzSaving" plugin.
+
+2. **Access the Asset Library**:
++ In the Godot editor, navigate to the top menu and click on "AssetLib."
+
+3. **Search for "EzSaving"**:
++ In the Asset Library window, use the search bar and type "EzSaving" to find the plugin.
+
+4. **Install the Plugin**:
++ Once you locate the "EzSaving" plugin, click on it to open its page. Here, you can view details about the plugin and its documentation.
+To install the plugin, click the "Install" button on the right-hand side of the page.
+
+5. **Configure the Plugin**:
++ After installation, return to your project. The "EzSaving" plugin should now be available in your project settings.
+Configure the plugin according to your project's needs, following the provided documentation.
+
+6. **Start Using "EzSaving"**:
++ With the plugin installed and configured, you're ready to start implementing powerful save and load systems in your game.
+
+![Installation1](https://github.com/LucasBr003/ez-saving/assets/94023123/18ade31b-4900-4d37-97d7-55eb0e843f1d)
+
+That's it! You've successfully installed the "EzSaving" plugin for Godot, and you can now take advantage of its features to enhance your game development experience.
+
 # Configuring the "EzSaving" Plugin
 
 Once the plugin is correctly installed, you should see a new tab labeled "EzSaving" next to the "AssetLib" tab. Click on it to access the plugin's interface, where you'll find several basic configuration options:
