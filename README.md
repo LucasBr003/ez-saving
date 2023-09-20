@@ -13,3 +13,6 @@ The "EzSaving" plugin for Godot is your streamlined solution for managing game s
 + **Performance Optimization**: The plugin is designed with performance in mind, ensuring efficient data handling during save and load operations.
   
 Elevate your game development experience with "EzSaving" and simplify the complex task of managing saved game data. Start enhancing your players' experiences today!
+
+# Documentation
+Visit the EzSaving Wiki on Github to access all the valuable information you need to streamline your game save and load systems.
