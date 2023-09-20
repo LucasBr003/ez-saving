@@ -1,4 +1,4 @@
-# Ez Saving
+# EzSaving
 The Godot Plugin "EzSaving" official repository.
 
 # Description
@@ -15,4 +15,4 @@ The "EzSaving" plugin for Godot is your streamlined solution for managing game s
 Elevate your game development experience with "EzSaving" and simplify the complex task of managing saved game data. Start enhancing your players' experiences today!
 
 # Documentation
-Visit the EzSaving Wiki on Github to access all the valuable information you need to streamline your game save and load systems.
+Visit the [EzSaving Wiki](https://github.com/LucasBr003/ez-saving/wiki) on Github to access all the valuable information you need to streamline your game save and load systems.
