@@ -86,7 +86,7 @@ By configuring these options in the "EzSaving" plugin interface, you can set up 
 To define the information that is going to be saved in your game or project, follow these steps:
 
 1. Locate the `FileSystem` tab in Godot, in the lower-left corner of the editor.
-2. In the search bar within the `FileSystem` tab, type "res://addons/ez_saving/objects/plugin_singleton/plugin_singleton_script.gd" and press Enter.
+2. In the search bar within the `FileSystem` tab, type `res://addons/ez_saving/objects/plugin_singleton/plugin_singleton_script.gd` and press Enter.
 3. If everything is correct, a script file should be selected automatically. Open the script.
 4. At the top of the script, in the first few lines, you'll find a variable named "DATA" of type "Dictionary." There is a comment line above it indicating that this variable should be modified according to your game or project's needs. It should look like this:
 ```
@@ -98,6 +98,11 @@ var DATA: Dictionary = {
 }
 ```
 > [!WARNING]
-> You should only modify the "DATA" dictionary within this script. Avoid making changes to other parts of the script, as incorrect alterations can interfere with the plugin's functionality.
+> You should only modify the `DATA` dictionary within this script. Avoid making changes to other parts of the script, as incorrect alterations can interfere with the plugin's functionality.
 
 By editing the "DATA" dictionary in this script, you can define and customize the information you want to save and load for your game or project.
+
+![SavedData1](https://github.com/LucasBr003/ez-saving/assets/94023123/49c4344b-c500-4c6f-9b60-2841ef946895)
+![SavedData2](https://github.com/LucasBr003/ez-saving/assets/94023123/17bd383e-a0ef-4b5d-b966-fcfe66a0cb2f)
+![SavedData3](https://github.com/LucasBr003/ez-saving/assets/94023123/d07b31a0-82cb-4619-9d08-d4e412d56b61)
+![SavedData4](https://github.com/LucasBr003/ez-saving/assets/94023123/0485a1b7-1db7-4a45-b3b2-97a4cb339ef8)
