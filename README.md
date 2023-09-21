@@ -62,7 +62,7 @@ Once the plugin is correctly installed, you should see a new tab labeled "EzSavi
 > Ensure that the directory where the files will be saved already exists. If you configure the files to be saved in a folder that doesn't exist, the plugin won't automatically create the folder, so be careful to prevent errors.
 
 2. ***Selected Save Slot***:
-+ This setting determines which file will be used to save the game, allowing players to save at various points in a game or project and return to any of them without affecting other saves. There is no limit to the number of save slots available.
++ This setting determines which file will be used to save the game, or which file will be loaded, allowing players to save at various points in a game or project and return to any of them without affecting other saves. There is no limit to the number of save slots available.
 
 3. ***Enable Automatic Saving***:
 + When this option is enabled, the plugin will automatically save the game or project at regular intervals.
@@ -106,3 +106,33 @@ By editing the "DATA" dictionary in this script, you can define and customize th
 ![SavedData2](https://github.com/LucasBr003/ez-saving/assets/94023123/17bd383e-a0ef-4b5d-b966-fcfe66a0cb2f)
 ![SavedData3](https://github.com/LucasBr003/ez-saving/assets/94023123/d07b31a0-82cb-4619-9d08-d4e412d56b61)
 ![SavedData4](https://github.com/LucasBr003/ez-saving/assets/94023123/0485a1b7-1db7-4a45-b3b2-97a4cb339ef8)
+
+# Changing Plugin Settings in Real-time
+
+All the plugin settings mentioned earlier can be altered in real-time during the execution of your game or project using GDScript. Some changes may be irrelevant, while others can be the key to create interesting save and load systems. To accomplish this, the plugin provides specific functions as listed below:
+
+1. set_file_path(new_path: String) -> void:
+   + This function changes the directory where the file will be saved but only if the following conditions are met: the directory starts with "user://," the directory does not include the file extension, and the directory exists.
+
+2. set_save_slot(new_slot: int) -> void:
+   + This function alters the "Selected File Slot," as seen previously, but only if new_slot is a positive integer.
+
+3. set_autosave_interval(new_interval: int) -> void:
+   + This function changes the interval between automatic saves, but only if new_interval is a positive integer greater than 1.
+
+4. toggle_automatic_saving(enabled: bool) -> void:
+   + This function enables or disables automatic saving.
+
+5. toggle_encryption(enabled: bool) -> void:
+   + This function enables or disables saving with encryption.
+
+6. toggle_debug_prints(enabled: bool) -> void: 
+   + This function toggles debug messages on or off.
+
+> [!NOTE]
+> Configurations changed in real-time are not reflected in the plugin's interface, meaning they will return to their original values upon restarting the game.
+
+> [!NOTE]
+> To access these functions, use the prefix "EzSaving." For example: "toggle_debug_prints(true)" becomes "EzSaving.toggle_debug_prints(true)."
+
+With these functions, you can dynamically adjust plugin settings during gameplay, allowing for greater flexibility and control over your save and load systems.
