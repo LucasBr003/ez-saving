@@ -111,22 +111,22 @@ By editing the "DATA" dictionary in this script, you can define and customize th
 
 All the plugin settings mentioned earlier can be altered in real-time during the execution of your game or project using GDScript. Some changes may be irrelevant, while others can be the key to create interesting save and load systems. To accomplish this, the plugin provides specific functions as listed below:
 
-1. set_file_path(new_path: String) -> void:
+1. ***set_file_path(new_path: String) -> void***:
    + This function changes the directory where the file will be saved but only if the following conditions are met: the directory starts with "user://," the directory does not include the file extension, and the directory exists.
 
-2. set_save_slot(new_slot: int) -> void:
+2. ***set_save_slot(new_slot: int) -> void***:
    + This function alters the "Selected File Slot," as seen previously, but only if new_slot is a positive integer.
 
-3. set_autosave_interval(new_interval: int) -> void:
+3. ***set_autosave_interval(new_interval: int) -> void***:
    + This function changes the interval between automatic saves, but only if new_interval is a positive integer greater than 1.
 
-4. toggle_automatic_saving(enabled: bool) -> void:
+4. ***toggle_automatic_saving(enabled: bool) -> void***:
    + This function enables or disables automatic saving.
 
-5. toggle_encryption(enabled: bool) -> void:
+5. ***toggle_encryption(enabled: bool) -> void***:
    + This function enables or disables saving with encryption.
 
-6. toggle_debug_prints(enabled: bool) -> void: 
+6. ***toggle_debug_prints(enabled: bool) -> void***: 
    + This function toggles debug messages on or off.
 
 > [!NOTE]
