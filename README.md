@@ -136,7 +136,10 @@ All the plugin settings mentioned earlier can be altered in real-time during the
 > To access these functions, use the prefix "EzSaving." For example: "toggle_debug_prints(true)" becomes "EzSaving.toggle_debug_prints(true)."
 
 > [!IMPORTANT]
+> Don't use, for example, this: `EzSaving.__selected_save_slot = 6`.
+> Use `EzSaving.set_save_slot(6)` instead!
 > Using the provided functions to modify plugin settings is the recommended approach for several reasons:
+
 > ***Error Handling***: These functions are designed to handle potential errors more effectively, providing built-in safeguards against unintended configuration changes.
 
 > ***Consistency***: By using the functions, you ensure that any modifications adhere to the expected format and behavior, maintaining consistency in your project.
