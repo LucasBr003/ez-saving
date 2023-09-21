@@ -19,24 +19,24 @@ Elevate your game development experience with "EzSaving" and simplify the comple
 Installing the "EzSaving" plugin for Godot is a straightforward process using the Godot Asset Library. Follow these simple steps to get started:
 
 1. **Open Your Godot Project**:
-+ Launch the Godot Engine and open the project where you want to install the "EzSaving" plugin.
+   + Launch the Godot Engine and open the project where you want to install the "EzSaving" plugin.
 
 2. **Access the Asset Library**:
-+ In the Godot editor, navigate to the top menu and click on "AssetLib."
+   + In the Godot editor, navigate to the top menu and click on "AssetLib."
 
 3. **Search for "EzSaving"**:
-+ In the Asset Library window, use the search bar and type "EzSaving" to find the plugin.
+   + In the Asset Library window, use the search bar and type "EzSaving" to find the plugin.
 
 4. **Install the Plugin**:
-+ Once you locate the "EzSaving" plugin, click on it to open its page. Here, you can view details about the plugin and its documentation.
+   + Once you locate the "EzSaving" plugin, click on it to open its page. Here, you can view details about the plugin and its documentation.
 To install the plugin, click the "Install" button on the right-hand side of the page.
 
 5. **Configure the Plugin**:
-+ After installation, return to your project. The "EzSaving" plugin should now be available in your project settings.
+   + After installation, return to your project. The "EzSaving" plugin should now be available in your project settings.
 Configure the plugin according to your project's needs, following the provided documentation.
 
 6. **Start Using "EzSaving"**:
-+ With the plugin installed and configured, you're ready to start implementing powerful save and load systems in your game.
+   + With the plugin installed and configured, you're ready to start implementing powerful save and load systems in your game.
 
 ![Installation1](https://github.com/LucasBr003/ez-saving/assets/94023123/18ade31b-4900-4d37-97d7-55eb0e843f1d)
 
@@ -62,19 +62,19 @@ Once the plugin is correctly installed, you should see a new tab labeled "EzSavi
 > Ensure that the directory where the files will be saved already exists. If you configure the files to be saved in a folder that doesn't exist, the plugin won't automatically create the folder, so be careful to prevent errors.
 
 2. ***Selected Save Slot***:
-+ This setting determines which file will be used to save the game, or which file will be loaded, allowing players to save at various points in a game or project and return to any of them without affecting other saves. There is no limit to the number of save slots available.
+   + This setting determines which file will be used to save the game, or which file will be loaded, allowing players to save at various points in a game or project and return to any of them without affecting other saves. There is no limit to the number of save slots available.
 
 3. ***Enable Automatic Saving***:
-+ When this option is enabled, the plugin will automatically save the game or project at regular intervals.
+   + When this option is enabled, the plugin will automatically save the game or project at regular intervals.
 
 4. ***Automatically Save Every ... minutes***:
-+ This setting is only relevant when `Enable Automatic Saving` is active. It defines the time interval between automatic saves.
+   + This setting is only relevant when `Enable Automatic Saving` is active. It defines the time interval between automatic saves.
 
 5. ***Enable Debug Prints***:
-+ If this option is enabled, the plugin will output debug messages in the Godot editor's output console.
+   + If this option is enabled, the plugin will output debug messages in the Godot editor's output console.
 
 6. ***Encrypt Save***:
-+ When this option is enabled, the save files will be encrypted with a special password (unknown to the user, to you and to me) to prevent manual tampering by players. If you want to know the password, use `print(OS.get_unique_id)`.
+   + When this option is enabled, the save files will be encrypted with a special password (unknown to the user, to you and to me) to prevent manual tampering by players. If you want to know the password, use `print(OS.get_unique_id)`.
 
 > [!NOTE]
 > It's highly recommended to disable this option during game or project development to facilitate easier manipulation of game progress. However, it should be enabled when releasing the game to prevent unwanted player interference.
