@@ -135,4 +135,12 @@ All the plugin settings mentioned earlier can be altered in real-time during the
 > [!NOTE]
 > To access these functions, use the prefix "EzSaving." For example: "toggle_debug_prints(true)" becomes "EzSaving.toggle_debug_prints(true)."
 
+> [!IMPORTANT]
+> Using the provided functions to modify plugin settings is the recommended approach for several reasons:
+> ***Error Handling***: These functions are designed to handle potential errors more effectively, providing built-in safeguards against unintended configuration changes.
+> ***Consistency***: By using the functions, you ensure that any modifications adhere to the expected format and behavior, maintaining consistency in your project.
+> ***Plugin Compatibility***: Utilizing the functions ensures compatibility with future updates or changes to the plugin's internal structure.
+
+Overall, relying on the functions offered by the plugin for configuration modifications enhances stability and reduces the risk of unexpected issues during gameplay.
+
 With these functions, you can dynamically adjust plugin settings during gameplay, allowing for greater flexibility and control over your save and load systems.
