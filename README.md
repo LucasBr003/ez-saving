@@ -85,27 +85,36 @@ By configuring these options in the "EzSaving" plugin interface, you can set up 
 
 To define the information that is going to be saved in your game or project, follow these steps:
 
-1. Locate the `FileSystem` tab in Godot, in the lower-left corner of the editor.
-2. In the search bar within the `FileSystem` tab, type `res://addons/ez_saving/objects/plugin_singleton/plugin_singleton_script.gd` and press Enter.
-3. If everything is correct, a script file should be selected automatically. Open the script.
-4. At the top of the script, in the first few lines, you'll find a variable named "DATA" of type "Dictionary." There is a comment line above it indicating that this variable should be modified according to your game or project's needs. It should look like this:
-```
-# The save file data. 
-# Customize it here :) 
-# Don't touch anything else >:(
-var DATA: Dictionary = {
-	
-}
-```
-> [!WARNING]
-> You should only modify the `DATA` dictionary within this script. Avoid making changes to other parts of the script, as incorrect alterations can interfere with the plugin's functionality.
+1. Locate the `FileSystem` tab in Godot, which is typically situated in the bottom left corner of the Godot editor.
 
-By editing the "DATA" dictionary in this script, you can define and customize the information you want to save and load for your game or project.
+2. In the `FileSystem` tab, you can use the search bar at the top to quickly find the script you need. Enter the following path: `res://addons/ez_saving/objects/plugin_singleton/plugin_singleton_script.gd`. If everything is correct, a script file should be selected automatically.
+
+3. Open the script file by double-clicking it. You will be directed to the script editor.
+
+4. In this script file, you will find a function named `create_data` at the top. This function returns a dictionary that can be edited to specify what information should be saved. Refer to the comment above this function for guidance on how to customize this dictionary according to your game or project requirements. The function should look like this:
+
+```
+func create_data() -> Dictionary:
+	# The save file data. 
+	# Customize it here :) 
+	# Don't touch anything else >:(
+	# Feel free to create new variables inside this function.
+	return {
+		# Add your data here.
+		
+	}
+```
+
+> [!NOTE]
+> You have the flexibility to create additional variables within the "create_data" function. This allows you to define and customize the information you want to save in a more efficient and tailored manner.
+
+> [!WARNING]
+> Please exercise caution when making changes to this script, as incorrect alterations may interfere with the functionality of the plugin. It's advisable to create new variables and modify the dictionary as needed while adhering to the provided structure.
 
 ![SavedData1](https://github.com/LucasBr003/ez-saving/assets/94023123/49c4344b-c500-4c6f-9b60-2841ef946895)
 ![SavedData2](https://github.com/LucasBr003/ez-saving/assets/94023123/17bd383e-a0ef-4b5d-b966-fcfe66a0cb2f)
-![SavedData3](https://github.com/LucasBr003/ez-saving/assets/94023123/d07b31a0-82cb-4619-9d08-d4e412d56b61)
-![SavedData4](https://github.com/LucasBr003/ez-saving/assets/94023123/0485a1b7-1db7-4a45-b3b2-97a4cb339ef8)
+![SavedData3](https://github.com/LucasBr003/ez-saving/assets/94023123/6245789c-6a77-499a-b1f9-da32a64c7d67)
+![SavedData4](https://github.com/LucasBr003/ez-saving/assets/94023123/fc260ae7-6cde-4090-bc4a-be7ad239b867)
 
 # Changing Plugin Settings in Real-time
 
