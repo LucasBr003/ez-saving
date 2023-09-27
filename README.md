@@ -192,3 +192,13 @@ The `SaveTrigger` node is a versatile tool that allows you to trigger actions su
 + ***Parent Signal***: The `SaveTrigger` is activated in response to the parent node emitting a signal with the same name as specified in this property. It allows for precise control and synchronization of save-related actions in your game or project.
 
 The `SaveTrigger` node provides a seamless way to integrate saving, loading, and resetting functionality into your game logic, making it easy to manage the state of your project based on specific triggers and signals.
+
+# Conclusion:
+
+Congratulations! You've reached the end of this documentation, and you're now well-equipped to harness the power of the EzSaving plugin for your game or project. With the comprehensive knowledge gained from this guide, you can efficiently implement saving and loading systems, manage different save slots, and configure various aspects of the plugin's functionality to suit your specific needs.
+
+Whether you choose to use the provided custom nodes or access the plugin's features through GDScript functions, you have the flexibility and control to create a seamless and user-friendly experience for your players.
+
+If you ever encounter any issues, please report it [here](https://github.com/LucasBr003/ez-saving/issues).
+
+Now, you're all set to dive into your game development journey with the powerful EzSaving plugin. Best of luck with your game or project, and happy coding!
