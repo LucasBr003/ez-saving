@@ -162,6 +162,8 @@ With these functions, you can dynamically adjust plugin settings during gameplay
 # Understanding EzSaving Nodes
 In this section, we will take a closer look at the nodes introduced by the EzSaving plugin and understand how they function. These custom nodes are designed to streamline the process of saving and loading game data in your Godot games or projects. Let's dive into each of them to see how they can enhance your game development experience.
 
+![Nodes1](https://github.com/LucasBr003/ez-saving/assets/94023123/39c116c4-d79a-4713-855e-c858fb770a60)
+
 ## Save Link ![SaveValueLinkIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/b9998162-3708-4ad5-a8d8-de0ba67c5483)
 The `SaveLink` node is a powerful tool that enables the automatic synchronization of information between the saved file and a property of the parent node, or vice versa. To effectively utilize the `SaveLink`, you must configure the following four properties:
 
