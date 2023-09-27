@@ -18,24 +18,24 @@ Elevate your game development experience with "EzSaving" and simplify the comple
 
 Installing the "EzSaving" plugin for Godot is a straightforward process using the Godot Asset Library. Follow these simple steps to get started:
 
-1. **Open Your Godot Project**:
+1. ***Open Your Godot Project***:
    + Launch the Godot Engine and open the project where you want to install the "EzSaving" plugin.
 
-2. **Access the Asset Library**:
+2. ***Access the Asset Library***:
    + In the Godot editor, navigate to the top menu and click on "AssetLib."
 
-3. **Search for "EzSaving"**:
+3. ***Search for "EzSaving"***:
    + In the Asset Library window, use the search bar and type "EzSaving" to find the plugin.
 
-4. **Install the Plugin**:
+4. ***Install the Plugin***:
    + Once you locate the "EzSaving" plugin, click on it to open its page. Here, you can view details about the plugin and its documentation.
 To install the plugin, click the "Install" button on the right-hand side of the page.
 
-5. **Configure the Plugin**:
+5. ***Configure the Plugin***:
    + After installation, return to your project. The "EzSaving" plugin should now be available in your project settings.
 Configure the plugin according to your project's needs, following the provided documentation.
 
-6. **Start Using "EzSaving"**:
+6. ***Start Using "EzSaving"***:
    + With the plugin installed and configured, you're ready to start implementing powerful save and load systems in your game.
 
 ![Installation1](https://github.com/LucasBr003/ez-saving/assets/94023123/18ade31b-4900-4d37-97d7-55eb0e843f1d)
@@ -75,6 +75,9 @@ Once the plugin is correctly installed, you should see a new tab labeled "EzSavi
 
 6. ***Encrypt Save***:
    + When this option is enabled, the save files will be encrypted with a special password (unknown to the user, to you and to me) to prevent manual tampering by players. If you want to know the password, use `print(OS.get_unique_id)`.
+
+7. ***Load Save on Start***:
+   + When this option is enabled, the plugin will automatically load a save file using the selected save slot as soon as the game or project starts.
 
 > [!NOTE]
 > It's highly recommended to disable this option during game or project development to facilitate easier manipulation of game progress. However, it should be enabled when releasing the game to prevent unwanted player interference.
@@ -117,7 +120,6 @@ func create_data() -> Dictionary:
 ![SavedData4](https://github.com/LucasBr003/ez-saving/assets/94023123/fc260ae7-6cde-4090-bc4a-be7ad239b867)
 
 # Changing Plugin Settings in Real-time
-
 All the plugin settings mentioned earlier can be altered in real-time during the execution of your game or project using GDScript. Some changes may be irrelevant, while others can be the key to create interesting save and load systems. To accomplish this, the plugin provides specific functions as listed below:
 
 1. ***set_file_path(new_path: String) -> void***:
@@ -137,6 +139,9 @@ All the plugin settings mentioned earlier can be altered in real-time during the
 
 6. ***toggle_debug_prints(enabled: bool) -> void***: 
    + This function toggles debug messages on or off.
+  
+7. ***toggle_autoload(enabled: bool) -> void***:
+   + This function enables or disables the automatic save loading.
 
 > [!NOTE]
 > Configurations changed in real-time are not reflected in the plugin's interface, meaning they will return to their original values upon restarting the game.
