@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>SaveCategoryIcon</title>
+	<defs>
+		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAHJQTFRFAN+qAOCrAOCrAOCrAOCrAOCrAOCrAOCrAN2oAAAAAOCrAOCrAN+qAN6pAOCrANyoAOCrAN+rAOCrAN+rAN+qAOCrAOCrAN+qAN+qANmmAOCrAOCrAN+qANmmAN+rAOCrAOCrAOCrAOCrAOCrAN6qAN6qVCoZ2wAAACZ0Uk5Tm/z/xiYa2eAfAOHf3Ao6COjOudbAhIPPyhBoamgN25ZWOfr4gmimG5p6AAAAZElEQVR4nI3K1xJAMBCF4Vg1uui9hPd/RckahHHhvzr7zRKiAegGiEzLdiiV9wXgOpSACkJeAB6CH4SiKJYbARImSuEGpX+Q5QWWlwdUddNiXT8gjNP5PrMXhJ+wPIGTdVGBbzscHweoe3zamAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

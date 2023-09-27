@@ -1,0 +1,282 @@
+[gd_scene load_steps=14 format=3 uid="uid://cicvqd6agulou"]
+
+[ext_resource type="Shader" path="res://addons/ez_saving/shaders/scroll_shader.gdshader" id="1_2smxv"]
+[ext_resource type="Texture2D" uid="uid://bk3vwtnuuq0xv" path="res://addons/ez_saving/images/checkerboard_texture.png" id="2_o5auq"]
+[ext_resource type="Texture2D" uid="uid://p3a7hoyi1x4" path="res://addons/ez_saving/images/black_texture.png" id="3_0w58o"]
+[ext_resource type="Texture2D" uid="uid://dnj371pydg0h4" path="res://addons/ez_saving/images/plugin_icon.png" id="3_pos88"]
+[ext_resource type="Theme" uid="uid://ch4m4ry73yt71" path="res://addons/ez_saving/themes/main.tres" id="4_6x305"]
+[ext_resource type="Script" path="res://addons/ez_saving/objects/main_container/basic_settings_script.gd" id="6_dokgb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_547dh"]
+shader = ExtResource("1_2smxv")
+shader_parameter/scroll_speed = Vector2(0.5, 0.5)
+shader_parameter/alpha = 0.35
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y46hd"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_i460f"]
+colors = PackedColorArray(0, 0.75, 1, 0, 0, 1, 0.584314, 0.447059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kw3fp"]
+gradient = SubResource("Gradient_i460f")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_tl4ym"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.447059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m0gu1"]
+gradient = SubResource("Gradient_tl4ym")
+fill_to = Vector2(0, 0.943662)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lbu8t"]
+
+[node name="MainContainer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundControl" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="BackgroundControl"]
+material = SubResource("ShaderMaterial_547dh")
+layout_mode = 0
+offset_left = 5.0
+offset_right = 670.0
+offset_bottom = 440.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_o5auq")
+stretch_mode = 1
+
+[node name="GlowTexture" type="TextureRect" parent="BackgroundControl"]
+material = SubResource("CanvasItemMaterial_y46hd")
+layout_mode = 0
+offset_left = 5.0
+offset_right = 670.0
+offset_bottom = 440.0
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_kw3fp")
+
+[node name="ShadowTexture" type="TextureRect" parent="BackgroundControl"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 670.0
+offset_bottom = 440.0
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_m0gu1")
+
+[node name="OverlayRect" type="NinePatchRect" parent="BackgroundControl"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -23.0
+offset_top = -30.0
+offset_right = 269.0
+offset_bottom = 262.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0w58o")
+patch_margin_left = 144
+patch_margin_top = 144
+patch_margin_right = 148
+patch_margin_bottom = 148
+
+[node name="OutlineTexture" type="TextureRect" parent="BackgroundControl"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 50.0
+offset_bottom = 44.0
+scale = Vector2(2, 2)
+texture = SubResource("PlaceholderTexture2D_lbu8t")
+stretch_mode = 1
+
+[node name="IconTexture" type="TextureRect" parent="BackgroundControl"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 582.0
+offset_bottom = 576.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_pos88")
+
+[node name="CreditsLabel" type="RichTextLabel" parent="BackgroundControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 83.0
+offset_top = 25.0
+offset_right = 1322.0
+offset_bottom = 105.0
+theme = ExtResource("4_6x305")
+bbcode_enabled = true
+text = " [wave amp=20.0 freq=5.0]EzSaving by IsItLucas?"
+fit_content = true
+
+[node name="BasicSettingsControl" type="Control" parent="."]
+layout_mode = 2
+script = ExtResource("6_dokgb")
+
+[node name="TitleLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_top = 33.0
+offset_right = 1152.0
+offset_bottom = 73.0
+theme = ExtResource("4_6x305")
+bbcode_enabled = true
+text = "  [wave amp=20.0 freq=5.0]Basic Settings:"
+fit_content = true
+
+[node name="SavePathLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_top = 87.0
+offset_right = 176.0
+offset_bottom = 127.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    SAVE FILE Path:"
+fit_content = true
+
+[node name="SavePathEdit" type="LineEdit" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 186.0
+offset_top = 81.0
+offset_right = 488.0
+offset_bottom = 112.0
+theme = ExtResource("4_6x305")
+text = "user://save"
+caret_blink = true
+
+[node name="DefaultSlotLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 486.0
+offset_top = 87.0
+offset_right = 695.0
+offset_bottom = 127.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    Selected SAVE SLOT:"
+fit_content = true
+
+[node name="DefaultSlotSpinbox" type="SpinBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 645.0
+offset_top = 81.0
+offset_right = 728.063
+offset_bottom = 112.0
+theme = ExtResource("4_6x305")
+min_value = 1.0
+value = 1.0
+
+[node name="AutoSaveLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 742.0
+offset_top = 87.0
+offset_right = 951.0
+offset_bottom = 127.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "   Enable AUTOMATIC SAVING?"
+fit_content = true
+
+[node name="AutoSaveCheckbox" type="CheckBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 952.0
+offset_top = 77.0
+offset_right = 994.0
+offset_bottom = 119.0
+scale = Vector2(0.9, 0.9)
+theme = ExtResource("4_6x305")
+
+[node name="TimeLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 736.0
+offset_top = 122.0
+offset_right = 1008.0
+offset_bottom = 162.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    AUTOMATICALLY SAVE Every:"
+fit_content = true
+
+[node name="TimeSpinbox" type="SpinBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 960.0
+offset_top = 116.0
+offset_right = 1043.06
+offset_bottom = 147.0
+theme = ExtResource("4_6x305")
+min_value = 1.0
+max_value = 999.0
+value = 1.0
+suffix = "mins"
+
+[node name="DebugModeLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1057.0
+offset_top = 87.0
+offset_right = 1266.0
+offset_bottom = 127.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    Enable Debug Prints?"
+fit_content = true
+
+[node name="DebugModeCheckbox" type="CheckBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 77.0
+offset_right = 1266.0
+offset_bottom = 119.0
+scale = Vector2(0.9, 0.9)
+theme = ExtResource("4_6x305")
+button_pressed = true
+
+[node name="ResetSaveLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1057.0
+offset_top = 121.0
+offset_right = 1266.0
+offset_bottom = 161.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    Reset SAVE on Start?"
+fit_content = true
+
+[node name="ResetSaveCheckbox" type="CheckBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 111.0
+offset_right = 1266.0
+offset_bottom = 153.0
+scale = Vector2(0.9, 0.9)
+theme = ExtResource("4_6x305")
+
+[connection signal="text_changed" from="BasicSettingsControl/SavePathEdit" to="BasicSettingsControl" method="_on_save_path_edit_text_changed"]
+[connection signal="value_changed" from="BasicSettingsControl/DefaultSlotSpinbox" to="BasicSettingsControl" method="_on_default_slot_spinbox_value_changed"]
+[connection signal="toggled" from="BasicSettingsControl/AutoSaveCheckbox" to="BasicSettingsControl" method="_on_auto_save_checkbox_toggled"]
+[connection signal="value_changed" from="BasicSettingsControl/TimeSpinbox" to="BasicSettingsControl" method="_on_time_spinbox_value_changed"]
+[connection signal="toggled" from="BasicSettingsControl/DebugModeCheckbox" to="BasicSettingsControl" method="_on_debug_mode_checkbox_toggled"]
+[connection signal="toggled" from="BasicSettingsControl/ResetSaveCheckbox" to="BasicSettingsControl" method="_on_reset_save_checkbox_toggled"]

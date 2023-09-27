@@ -1,0 +1,270 @@
+[gd_scene load_steps=13 format=3 uid="uid://suo8vfpb6lsb"]
+
+[ext_resource type="Shader" path="res://addons/ez_saving/shaders/scroll_shader.gdshader" id="1_xr1su"]
+[ext_resource type="Script" path="res://addons/ez_saving/objects/test_scene/test_scene_script.gd" id="2_s6iks"]
+[ext_resource type="Texture2D" uid="uid://bk3vwtnuuq0xv" path="res://addons/ez_saving/images/checkerboard_texture.png" id="2_xliom"]
+[ext_resource type="Theme" uid="uid://ch4m4ry73yt71" path="res://addons/ez_saving/themes/main.tres" id="3_krpwc"]
+[ext_resource type="Script" path="res://addons/ez_saving/objects/custom_nodes/save_link/save_link_script.gd" id="5_jvgjr"]
+[ext_resource type="Script" path="res://addons/ez_saving/objects/custom_nodes/save_trigger/save_trigger_script.gd" id="6_awcfa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5j8y"]
+shader = ExtResource("1_xr1su")
+shader_parameter/scroll_speed = Vector2(0.5, 0.5)
+shader_parameter/alpha = 0.35
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bsrlu"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_i460f"]
+colors = PackedColorArray(0, 0.384314, 1, 0, 0, 1, 0.584314, 0.447059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_44q3f"]
+gradient = SubResource("Gradient_i460f")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_tl4ym"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.447059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5nhs"]
+gradient = SubResource("Gradient_tl4ym")
+fill_to = Vector2(0, 0.943662)
+
+[node name="TestScene" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_krpwc")
+script = ExtResource("2_s6iks")
+
+[node name="Background" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="Background"]
+material = SubResource("ShaderMaterial_r5j8y")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xliom")
+stretch_mode = 1
+
+[node name="GlowTexture" type="TextureRect" parent="Background"]
+material = SubResource("CanvasItemMaterial_bsrlu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_44q3f")
+
+[node name="ShadowTexture" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_h5nhs")
+
+[node name="TestIntegerLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 336.0
+offset_bottom = 112.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Test Integer:"
+fit_content = true
+
+[node name="TestIntegerSpinbox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 97.0
+offset_right = 156.063
+offset_bottom = 128.0
+min_value = -100.0
+
+[node name="SaveLink" type="Node" parent="TestIntegerSpinbox"]
+script = ExtResource("5_jvgjr")
+LINK_MODE = 1
+PARENT_PROPERTY = "value"
+SAVE_VALUE = "TestInteger"
+PARENT_SIGNAL = "value_changed"
+
+[node name="TestFloatLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 144.0
+offset_right = 336.0
+offset_bottom = 184.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Test Float:"
+fit_content = true
+
+[node name="TestFloatSpinbox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 169.0
+offset_right = 156.063
+offset_bottom = 200.0
+min_value = -100.0
+step = 0.05
+
+[node name="SaveLink" type="Node" parent="TestFloatSpinbox"]
+script = ExtResource("5_jvgjr")
+LINK_MODE = 1
+PARENT_PROPERTY = "value"
+SAVE_VALUE = "TestFloat"
+PARENT_SIGNAL = "value_changed"
+
+[node name="TestStringLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 216.0
+offset_top = 72.0
+offset_right = 488.0
+offset_bottom = 112.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Test String:"
+fit_content = true
+
+[node name="TestStringEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 96.0
+offset_right = 445.0
+offset_bottom = 127.0
+placeholder_text = "Test"
+
+[node name="SaveLink" type="Node" parent="TestStringEdit"]
+script = ExtResource("5_jvgjr")
+LINK_MODE = 1
+PARENT_PROPERTY = "text"
+SAVE_VALUE = "TestString"
+PARENT_SIGNAL = "text_changed"
+
+[node name="TestParagraphLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 216.0
+offset_top = 144.0
+offset_right = 488.0
+offset_bottom = 184.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Test Paragraph:"
+fit_content = true
+
+[node name="TestParagraphEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 168.0
+offset_right = 444.0
+offset_bottom = 312.0
+placeholder_text = "Test"
+
+[node name="SaveLink" type="Node" parent="TestParagraphEdit"]
+script = ExtResource("5_jvgjr")
+LINK_MODE = 1
+PARENT_PROPERTY = "text"
+SAVE_VALUE = "TestParagraph"
+PARENT_SIGNAL = "text_changed"
+
+[node name="TestBooleanLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 504.0
+offset_top = 72.0
+offset_right = 776.0
+offset_bottom = 112.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Test Boolean:"
+fit_content = true
+
+[node name="TestBooleanCheckbox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 95.0
+offset_right = 546.0
+offset_bottom = 137.0
+scale = Vector2(0.75, 0.75)
+
+[node name="SaveLink" type="Node" parent="TestBooleanCheckbox"]
+script = ExtResource("5_jvgjr")
+LINK_MODE = 1
+PARENT_PROPERTY = "button_pressed"
+SAVE_VALUE = "TestBoolean"
+PARENT_SIGNAL = "toggled"
+
+[node name="SaveSlotLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 896.0
+offset_top = 72.0
+offset_right = 1168.0
+offset_bottom = 112.0
+theme = ExtResource("3_krpwc")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = " Save Slot:"
+fit_content = true
+
+[node name="SaveSlotSpinbox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 97.0
+offset_right = 988.063
+offset_bottom = 128.0
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 152.0
+offset_right = 988.0
+offset_bottom = 192.0
+text = "[ Save ]"
+
+[node name="SaveTrigger" type="Node" parent="SaveButton"]
+script = ExtResource("6_awcfa")
+PARENT_SIGNAL = "pressed"
+
+[node name="LoadButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 192.0
+offset_right = 988.0
+offset_bottom = 232.0
+text = "[ Load ]"
+
+[node name="SaveTrigger" type="Node" parent="LoadButton"]
+script = ExtResource("6_awcfa")
+TRIGGER_ACTION = 1
+PARENT_SIGNAL = "pressed"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]

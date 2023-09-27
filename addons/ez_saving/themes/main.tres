@@ -1,0 +1,102 @@
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://ch4m4ry73yt71"]
+
+[ext_resource type="Texture2D" uid="uid://bql24d0vock6k" path="res://addons/ez_saving/images/checkbox_checked.png" id="1_8s7og"]
+[ext_resource type="FontFile" uid="uid://cjhjf5pqxtcqs" path="res://addons/ez_saving/fonts/mini_pixel-7.ttf" id="1_c1gun"]
+[ext_resource type="Texture2D" uid="uid://cwd5lftxwmwlc" path="res://addons/ez_saving/images/checkbox_unchecked.png" id="2_a5ypy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hgi5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_td482"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuvi4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6fw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srvmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekvpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1ypx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bievq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 5.0
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8gfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ytrp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12pih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eyf7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1pxe"]
+content_margin_left = 8.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g74bl"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.780392, 0.780392, 0.780392, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_c1gun")
+Button/styles/disabled = SubResource("StyleBoxEmpty_4hgi5")
+Button/styles/focus = SubResource("StyleBoxEmpty_td482")
+Button/styles/hover = SubResource("StyleBoxEmpty_yuvi4")
+Button/styles/normal = SubResource("StyleBoxEmpty_p6fw8")
+Button/styles/pressed = SubResource("StyleBoxEmpty_srvmd")
+CheckBox/font_sizes/font_size = 16
+CheckBox/fonts/font = null
+CheckBox/icons/checked = ExtResource("1_8s7og")
+CheckBox/icons/unchecked = ExtResource("2_a5ypy")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_ekvpb")
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/font_sizes/font_size = 20
+LineEdit/fonts/font = ExtResource("1_c1gun")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_o1ypx")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_bievq")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_f8gfr")
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.611765)
+RichTextLabel/constants/outline_size = 8
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 4
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/normal_font = ExtResource("1_c1gun")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_1ytrp")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_12pih")
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/font_sizes/font_size = 20
+TextEdit/fonts/font = ExtResource("1_c1gun")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_eyf7q")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_k1pxe")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_g74bl")

@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>diskette</title>
+	<defs>
+		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAH5QTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////snyM2gAAACp0Uk5Tkfn/wikc1toaAPvb2Qs9COTItdDHj5DVzBBbXFoO3ZpRNrxSu/r3hvxsg89FwQAAAGtJREFUeJyNyskSgjAURNFHo4GgyCSCKCoz/P8PGpKCBMqFd9V1qokswD5AdGSOyzl50ICTywkmCNkBzhKYfxEF4bwlIIpFCTQY/QfXVHXLFOT34iF7li8J789yr2oFzQrtL+i20NMwmuBNXzjNCFM7FQiZAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
