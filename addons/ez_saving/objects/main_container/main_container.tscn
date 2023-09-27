@@ -274,9 +274,33 @@ scale = Vector2(0.9, 0.9)
 theme = ExtResource("4_6x305")
 button_pressed = true
 
+[node name="AutoloadLabel" type="RichTextLabel" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 780.0
+offset_top = 265.0
+offset_right = 989.0
+offset_bottom = 305.0
+theme = ExtResource("4_6x305")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "    Load SAVE on start?"
+fit_content = true
+
+[node name="AutoloadCheckbox" type="CheckBox" parent="BasicSettingsControl"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 996.0
+offset_top = 255.0
+offset_right = 1038.0
+offset_bottom = 297.0
+scale = Vector2(0.9, 0.9)
+theme = ExtResource("4_6x305")
+
 [connection signal="text_submitted" from="BasicSettingsControl/SavePathEdit" to="BasicSettingsControl" method="_on_save_path_edit_text_submitted"]
 [connection signal="value_changed" from="BasicSettingsControl/DefaultSlotSpinbox" to="BasicSettingsControl" method="_on_default_slot_spinbox_value_changed"]
 [connection signal="toggled" from="BasicSettingsControl/AutoSaveCheckbox" to="BasicSettingsControl" method="_on_auto_save_checkbox_toggled"]
 [connection signal="value_changed" from="BasicSettingsControl/TimeSpinbox" to="BasicSettingsControl" method="_on_time_spinbox_value_changed"]
 [connection signal="toggled" from="BasicSettingsControl/DebugModeCheckbox" to="BasicSettingsControl" method="_on_debug_mode_checkbox_toggled"]
 [connection signal="toggled" from="BasicSettingsControl/EncryptSaveCheckbox" to="BasicSettingsControl" method="_on_encrypt_save_checkbox_toggled"]
+[connection signal="toggled" from="BasicSettingsControl/AutoloadCheckbox" to="BasicSettingsControl" method="_on_autoload_checkbox_toggled"]

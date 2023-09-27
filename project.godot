@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EzSaving"
-config/tags=PackedStringArray("plugin")
+config/tags=PackedStringArray("plugin", "finished")
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://addons/ez_saving/images/plugin_icon.svg"
 

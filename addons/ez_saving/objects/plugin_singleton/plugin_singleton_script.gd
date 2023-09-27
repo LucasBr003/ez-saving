@@ -34,17 +34,20 @@ static var __autosave_interval: int
 static var __automatic_saving: bool
 static var __debug_prints: bool
 static var __encrypt_save: bool 
+static var __autoload: bool
 
 var PLUGIN_SETTINGS: Dictionary = {
 	"SaveFilePath": "user://save",
 	"SelectedSaveSlot": 0,
-	"AutosaveInterval": 1,
+	"AutosaveInterval": 1.0,
 	"AutomaticSaving": false,
 	"DebugPrints": true,
-	"EncryptSave": true
+	"EncryptSave": true,
+	"AutoloadSave": false,
 }
 
 var DATA: Dictionary = {}
+var tick: float = 0.0
 
 func _ready() -> void:
 	# Loading the plugin's settings.
@@ -55,6 +58,33 @@ func _ready() -> void:
 		# Printing a success message.
 		if (__debug_prints): # Checking if the plugin can send debug prints.
 			print("Successfully loaded the plugin's settings.\n%s" % str(PLUGIN_SETTINGS)) # Printing a success message.
+			
+		# Automatically loading the save file.
+		if (__autoload): # Checking if the save file should be loaded automatically as soon as possible.
+			load_file() # Loading the save file if so.
+			
+			# Printing a success message.
+			if (__debug_prints): # Checking if the plugin can send debug prints.
+				print("Automatically loading the save file...") # Printing a success message
+			
+func _process(delta: float) -> void:
+	# Checking if automatic saving is enabled.
+	if (!__automatic_saving || Engine.is_editor_hint()):
+		return # Stopping the code right here.
+	
+	# Automatic Saving.
+	tick += delta # Increasing the tick variable.
+	
+	if (tick > get_autosave_interval() * 60.0): # Checking if it has been enough time to autosave.
+		# Resetting the tick variable.
+		tick = 0
+		
+		# Saving.
+		save_file()
+		
+		# Printing a success message.
+		if (__debug_prints): # Checking if the plugin can send debug prints.
+			print("Successfully autosaved.") # Printing a success message.
 	
 func save_file() -> void:
 	# Checking if the save path is valid.
@@ -187,9 +217,9 @@ func set_autosave_interval(new_interval: int) -> void:
 	
 	# Printing a success message.
 	if (__debug_prints): # Checking if the plugin can send debug prints.
-		print("Successfully updated the selected save slot from \"%s\" to \"%s\"." % [__autosave_interval, new_interval]) # Printing a success message.
+		print("Successfully updated the autosave interval from \"%s\" to \"%s\"." % [__autosave_interval, new_interval]) # Printing a success message.
 	
-	# Updating the selected save slot.
+	# Updating the autosave interval.
 	__autosave_interval = new_interval
 	
 	# Updating the plugin's settings.
@@ -207,7 +237,7 @@ func toggle_automatic_saving(enabled: bool) -> void:
 	if (__debug_prints): # Checking if the plugin can send debug prints.
 		print_rich("Automatic Saving is now %s[/color]." % message[enabled]) # Printing a success message.
 	
-	# Updating the selected save slot.
+	# Updating the automatic saving.
 	__automatic_saving = enabled
 	
 	# Updating the plugin's settings.
@@ -225,11 +255,29 @@ func toggle_encryption(enabled: bool) -> void:
 	if (__debug_prints): # Checking if the plugin can send debug prints.
 		print_rich("Save Encryption is now %s[/color]." % message[enabled]) # Printing a success message.
 	
-	# Updating the selected save slot.
+	# Updating the save encryption.
 	__encrypt_save = enabled
 	
 	# Updating the plugin's settings.
 	PLUGIN_SETTINGS["EncryptSave"] = __encrypt_save # Updating the variable.
+	save_plugin_settings() # Saving the pluggin's settings.
+	
+func toggle_autoload(enabled: bool) -> void:
+	# Updating the automatically loading.
+	var message: Dictionary = { # Creating a new dictionary to easily print the correct message.
+		true: "[color=green]enabled",
+		false: "[color=red]disabled"
+	}
+	
+	# Printing a success message.
+	if (__debug_prints): # Checking if the plugin can send debug prints.
+		print_rich("Automatic Loading on Start is now %s[/color]." % message[enabled]) # Printing a success message.
+	
+	# Updating the automatic loading.
+	__autoload = enabled
+	
+	# Updating the plugin's settings.
+	PLUGIN_SETTINGS["AutomaticLoad"] = __autoload # Updating the variable.
 	save_plugin_settings() # Saving the pluggin's settings.
 	
 func toggle_debug_prints(enabled: bool) -> void:
@@ -277,6 +325,7 @@ func load_plugin_settings() -> void:
 	__encrypt_save = PLUGIN_SETTINGS["EncryptSave"]
 	__save_file_path = PLUGIN_SETTINGS["SaveFilePath"]
 	__selected_save_slot = PLUGIN_SETTINGS["SelectedSaveSlot"]
+	__autoload = PLUGIN_SETTINGS["AutomaticLoad"]
 	
 	# Closing the file since it's not useful anymore.
 	file.close()
