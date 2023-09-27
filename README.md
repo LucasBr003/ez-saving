@@ -193,7 +193,7 @@ The `SaveTrigger` node is a versatile tool that allows you to trigger actions su
 
 The `SaveTrigger` node provides a seamless way to integrate saving, loading, and resetting functionality into your game logic, making it easy to manage the state of your project based on specific triggers and signals.
 
-# Conclusion:
+# Conclusion
 
 Congratulations! You've reached the end of this documentation, and you're now well-equipped to harness the power of the EzSaving plugin for your game or project. With the comprehensive knowledge gained from this guide, you can efficiently implement saving and loading systems, manage different save slots, and configure various aspects of the plugin's functionality to suit your specific needs.
 
