@@ -158,3 +158,35 @@ All the plugin settings mentioned earlier can be altered in real-time during the
 Overall, relying on the functions offered by the plugin for configuration modifications enhances stability and reduces the risk of unexpected issues during gameplay.
 
 With these functions, you can dynamically adjust plugin settings during gameplay, allowing for greater flexibility and control over your save and load systems.
+
+# Understanding EzSaving Nodes
+In this section, we will take a closer look at the nodes introduced by the EzSaving plugin and understand how they function. These custom nodes are designed to streamline the process of saving and loading game data in your Godot games or projects. Let's dive into each of them to see how they can enhance your game development experience.
+
+## Save Link ![SaveValueLinkIcon16](https://github.com/LucasBr003/ez-saving/assets/94023123/b9998162-3708-4ad5-a8d8-de0ba67c5483)
+The `SaveLink` node is a powerful tool that enables the automatic synchronization of information between the saved file and a property of the parent node, or vice versa. To effectively utilize the `SaveLink`, you must configure the following four properties:
+
++ ***Link Mode***: This property can take one of two values: `Save Value = Property` or `Property = Save Value.`
+  - When set to `Save Value = Property`, the information in the save file will have the same value as a property of the parent node.
+  - Conversely, when set to `Property = Save Value`, a property of the parent node will adopt the value stored in the save file.
+
++ ***Parent Property***: This property defines which property of the parent node will be utilized by the `SaveLink` node.
+
++ ***Save Value***: This property specifies which piece of information from the saved file will be used by the `SaveLink`. It should be set to the name of a key within the dictionary stored in the saved file.
+
++ ***Parent Signal***: The synchronization process takes place when the parent node emits a signal with the same name as this property.
+
+The `SaveLink` node provides a versatile way to manage data synchronization between the saved file and the parent node, allowing for dynamic updates and interactions in your game or project. It's a powerful tool for maintaining consistency and real-time connections between different aspects of your game logic.
+
+## Save Trigger ![SaveEventListener16](https://github.com/LucasBr003/ez-saving/assets/94023123/02de639b-93ea-4f24-a6e8-3e975bd29bf3)
+The `SaveTrigger` node is a versatile tool that allows you to trigger actions such as saving, loading, or resetting the saved file when the parent node emits a specific signal. To the `SaveTrigger` function effectively, you'll need to configure three essential properties:
+
++ ***Trigger Action***: This property determines the action to be performed by the `SaveTrigger` when activated. It can be set to one of the following values:
+  - `Save`: This option instructs the `SaveTrigger` to save the current state of the game or project.
+  - `Load`: Selecting this option causes the `SaveTrigger` to load the save file, restoring the game to a previous state.
+  - `Reset`: Choosing this option directs the `SaveTrigger` to reset the save file to its default values.
+
++ ***Save Slot Override***: This property specifies which save slot will be used by the `SaveTrigger`. If the value is less than 0, the `SaveTrigger` will use the save slot selected in the plugin's settings. However, if the value is greater than or equal to 0, the `SaveTrigger` will utilize the save slot defined by this property, overriding any default selection.
+
++ ***Parent Signal***: The `SaveTrigger` is activated in response to the parent node emitting a signal with the same name as specified in this property. It allows for precise control and synchronization of save-related actions in your game or project.
+
+The `SaveTrigger` node provides a seamless way to integrate saving, loading, and resetting functionality into your game logic, making it easy to manage the state of your project based on specific triggers and signals.
