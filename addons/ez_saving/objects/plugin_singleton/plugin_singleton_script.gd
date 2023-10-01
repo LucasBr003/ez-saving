@@ -104,6 +104,9 @@ func save_file() -> void:
 		
 	# Closing the file since it's not useful anymore.
 	file.close()
+
+	# Emitting a signal.
+	emit_signal("file_saved")
 	
 func load_file() -> void:
 	# Loading the File.
@@ -304,9 +307,6 @@ func save_plugin_settings() -> void:
 	
 	# Closing the file since it's not useful anymore.
 	file.close()
-	
-	# Emitting a signal.
-	emit_signal("file_saved")
 	
 func load_plugin_settings() -> void:
 	# Getting ready to read the file.
