@@ -1,7 +1,7 @@
 # EzSaving
 The Godot Plugin "EzSaving" official repository.
 
-## Changelog
+### Changelog
 1.0.1 - Fixed the "file_saved" signal.
 1.0.0 - Initial Plugin Release.
 
