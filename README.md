@@ -2,9 +2,8 @@
 The Godot Plugin "EzSaving" official repository.
 
 ### Changelog
-1.0.1 - Fixed the "file_saved" signal.
-
-1.0.0 - Initial Plugin Release.
++ 1.0.1 - Fixed the "file_saved" signal.
++ 1.0.0 - Initial Plugin Release.
 
 # Description
 The "EzSaving" plugin for Godot is your streamlined solution for managing game save and load systems with ease. Designed for simplicity and efficiency, this plugin empowers developers to effortlessly incorporate save functionality into their projects. With a user-friendly interface and intuitive workflows, creating, managing, and loading saved game data has never been more straightforward.
